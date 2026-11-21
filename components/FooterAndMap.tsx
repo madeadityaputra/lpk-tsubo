@@ -1,16 +1,13 @@
 import Image from "next/image";
+import { ActionLink } from "@/components/ui/ActionLink";
 import {
-  EXTERNAL_LINKS,
+  FOOTER_CONTENT,
   SITE_IDENTITY,
-  buildWhatsAppUrl,
+  buildMapEmbedUrl,
 } from "@/lib/content";
 
 export function FooterAndMap() {
-  const waAdmin1 = buildWhatsAppUrl("id", "umum");
-  const waAdmin2 = buildWhatsAppUrl("jp", "umum");
-  const mapQueryUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-    `${SITE_IDENTITY.officialName}, ${SITE_IDENTITY.address}`
-  )}&output=embed`;
+  const mapQueryUrl = buildMapEmbedUrl();
 
   return (
     <footer
@@ -60,7 +57,7 @@ export function FooterAndMap() {
 
             <div>
               <dt className="font-display text-xs font-bold tracking-wider text-[#FF9B8E] uppercase">
-                Telepon & WhatsApp
+                Telepon &amp; WhatsApp
               </dt>
               <dd className="mt-1">
                 <a
@@ -74,38 +71,15 @@ export function FooterAndMap() {
           </dl>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={EXTERNAL_LINKS.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center rounded-full border border-white/35 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-indigo-deep"
-            >
-              Instagram {EXTERNAL_LINKS.instagramHandle}
-            </a>
-            <a
-              href={waAdmin1}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center rounded-full border border-white/35 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-indigo-deep"
-            >
-              WA Admin 1 (Indonesia)
-            </a>
-            <a
-              href={waAdmin2}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center rounded-full border border-white/35 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-indigo-deep"
-            >
-              WA Admin 2 (Jepang)
-            </a>
-            <a
-              href={EXTERNAL_LINKS.linktree}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center rounded-full border border-white/35 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-indigo-deep"
-            >
-              Linktree Resmi
-            </a>
+            {FOOTER_CONTENT.socialLinks.map((link) => (
+              <ActionLink
+                key={link.label}
+                actionId={link.action}
+                variant="outlineLight"
+              >
+                {link.label}
+              </ActionLink>
+            ))}
           </div>
         </div>
 
@@ -122,17 +96,16 @@ export function FooterAndMap() {
 
           <div className="mt-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
             <p className="text-xs text-white/80">
-              Kec. Teluk Betung Utara, Kota Bandar Lampung
+              {SITE_IDENTITY.shortLocation}
             </p>
-            <a
-              href={EXTERNAL_LINKS.googleMaps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full bg-torii px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-torii-dark"
+            <ActionLink
+              actionId={FOOTER_CONTENT.mapsCtaAction}
+              variant="primaryCompact"
+              className="shrink-0 px-5 py-2.5"
             >
-              <span>Buka di Google Maps</span>
+              <span>{FOOTER_CONTENT.mapsCtaLabel}</span>
               <span aria-hidden="true">↗</span>
-            </a>
+            </ActionLink>
           </div>
         </div>
       </div>

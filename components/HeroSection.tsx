@@ -1,20 +1,13 @@
 import Image from "next/image";
-import {
-  EXTERNAL_LINKS,
-  HERO_CONTENT,
-  SITE_IDENTITY,
-  buildWhatsAppUrl,
-} from "@/lib/content";
+import { ActionLink } from "@/components/ui/ActionLink";
+import { HERO_CONTENT, SITE_IDENTITY } from "@/lib/content";
 
 export function HeroSection() {
-  const waTrialUrl = buildWhatsAppUrl("id", "trial");
-
   return (
     <section
       aria-labelledby="hero-heading"
       className="relative overflow-hidden bg-indigo-deep text-white"
     >
-      {/* Background illustration with subtle gradient overlay so text contrast stays >= 7:1 */}
       <div className="pointer-events-none absolute inset-0">
         <Image
           src={HERO_CONTENT.illustrationPath}
@@ -33,10 +26,7 @@ export function HeroSection() {
       <div className="relative mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-white backdrop-blur-sm sm:text-sm">
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full bg-torii"
-            />
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-torii" />
             <span>{HERO_CONTENT.badge}</span>
           </div>
 
@@ -59,12 +49,7 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-            <a
-              href={EXTERNAL_LINKS.formSiswaBaru}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-torii px-7 py-3.5 text-base font-bold text-white shadow-md transition-colors hover:bg-torii-dark"
-            >
+            <ActionLink actionId={HERO_CONTENT.primaryCtaAction} variant="primary">
               <span>{HERO_CONTENT.primaryCtaLabel}</span>
               <svg
                 aria-hidden="true"
@@ -78,13 +63,11 @@ export function HeroSection() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </ActionLink>
 
-            <a
-              href={waTrialUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-white/80 bg-indigo-deep/60 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-indigo-deep"
+            <ActionLink
+              actionId={HERO_CONTENT.secondaryCtaAction}
+              variant="heroOutline"
             >
               <svg
                 aria-hidden="true"
@@ -99,7 +82,7 @@ export function HeroSection() {
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
               </svg>
               <span>{HERO_CONTENT.secondaryCtaLabel}</span>
-            </a>
+            </ActionLink>
           </div>
         </div>
       </div>

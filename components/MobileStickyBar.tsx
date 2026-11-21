@@ -1,31 +1,28 @@
-import { EXTERNAL_LINKS, buildWhatsAppUrl } from "@/lib/content";
+import { ActionLink } from "@/components/ui/ActionLink";
+import { MOBILE_STICKY_CONTENT } from "@/lib/content";
 
 export function MobileStickyBar() {
-  const waTrialUrl = buildWhatsAppUrl("id", "trial");
-
   return (
     <div
       role="region"
-      aria-label="Aksi cepat pendaftaran dan konsultasi"
+      aria-label={MOBILE_STICKY_CONTENT.regionLabel}
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 shadow-lg backdrop-blur md:hidden"
     >
       <div className="mx-auto grid max-w-md grid-cols-2 gap-3">
-        <a
-          href={EXTERNAL_LINKS.formSiswaBaru}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-12 items-center justify-center rounded-full bg-torii px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-torii-dark"
+        <ActionLink
+          actionId={MOBILE_STICKY_CONTENT.primaryAction}
+          variant="primary"
+          className="px-4 py-2.5 text-sm shadow-none"
         >
-          Daftar
-        </a>
-        <a
-          href={waTrialUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-12 items-center justify-center rounded-full bg-indigo-deep px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-indigo-light"
+          {MOBILE_STICKY_CONTENT.primaryLabel}
+        </ActionLink>
+        <ActionLink
+          actionId={MOBILE_STICKY_CONTENT.secondaryAction}
+          variant="solidIndigo"
+          className="px-4 py-2.5"
         >
-          WhatsApp
-        </a>
+          {MOBILE_STICKY_CONTENT.secondaryLabel}
+        </ActionLink>
       </div>
     </div>
   );
