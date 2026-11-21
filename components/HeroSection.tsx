@@ -22,11 +22,11 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right opacity-35 sm:opacity-45 lg:opacity-65"
+          className="object-cover object-right opacity-55 sm:opacity-70 lg:opacity-90"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-indigo-deep via-indigo-deep/95 to-indigo-deep/55 lg:via-indigo-deep/85 lg:to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-indigo-deep/95 via-indigo-deep/80 to-indigo-deep/25 lg:via-indigo-deep/55 lg:to-transparent"
         />
       </div>
 

@@ -65,9 +65,9 @@ export const HERO_CONTENT = {
     "LPK Tsubo membimbing Anda dari nol hingga siap berkarier resmi di Jepang, lengkap dengan pelatihan kerja dan job matching.",
   primaryCtaLabel: "Daftar Free Trial Class",
   secondaryCtaLabel: "Hubungi Admin",
-  illustrationPath: "/generated/hero-torii-fuji.jpg",
+  illustrationPath: "/generated/hero-luxury.webp",
   illustrationAlt:
-    "Ilustrasi gerbang torii merah dengan latar Gunung Fuji dan bunga sakura saat fajar",
+    "Ilustrasi senja mewah gerbang torii merah dan pagoda tradisional berlatar Gunung Fuji, bunga sakura, serta siluet Tokyo",
 } as const;
 
 export const TRUST_STATS = [
@@ -118,6 +118,9 @@ export const PROGRAMS: ProgramItem[] = [
     ],
     ctaLabel: "Daftar Siswa Baru",
     ctaHref: EXTERNAL_LINKS.formSiswaBaru,
+    imagePath: "/generated/program-kursus.webp",
+    imageAlt:
+      "Ilustrasi karakter anime sensei ramah mengenakan kimono dan hakama di kelas bahasa Jepang",
   },
   {
     id: "bimbel",
@@ -131,6 +134,9 @@ export const PROGRAMS: ProgramItem[] = [
     ],
     ctaLabel: "Daftar Bimbel",
     ctaHref: EXTERNAL_LINKS.formBimbel,
+    imagePath: "/generated/program-bimbel.webp",
+    imageAlt:
+      "Ilustrasi karakter anime pelajar bersemangat belajar bahasa Jepang di meja belajar bersama boneka Daruma",
   },
   {
     id: "work-in-japan",
@@ -144,9 +150,9 @@ export const PROGRAMS: ProgramItem[] = [
     ],
     ctaLabel: "Konsultasi Program Kerja",
     ctaHref: buildWhatsAppUrl("id", "program"),
-    imagePath: "/generated/work-in-japan.jpg",
+    imagePath: "/generated/program-work-in-japan.webp",
     imageAlt:
-      "Ilustrasi profesional muda menuju karier di Jepang dengan latar menara Tokyo dan kereta Shinkansen",
+      "Ilustrasi profesional muda berjas rapi di peron stasiun Shinkansen dengan latar Tokyo Tower dan bunga sakura",
   },
   {
     id: "job-matching",
@@ -160,9 +166,9 @@ export const PROGRAMS: ProgramItem[] = [
     ],
     ctaLabel: "Tanya Peluang Kerja",
     ctaHref: buildWhatsAppUrl("id", "program"),
-    imagePath: "/generated/work-in-japan.jpg",
+    imagePath: "/generated/program-job-matching.webp",
     imageAlt:
-      "Ilustrasi pendampingan pencocokan kerja ke Jepang bersama Tsubo JLTC",
+      "Ilustrasi kandidat dan mentor berhaori meninjau peta karier bersama origami bangau merah berlatar Gunung Fuji",
   },
 ];
 
